@@ -1,0 +1,38 @@
+# Grid
+# Create a full volume defining the shape of the grid
+##
+/gate/world/daughters/name grid
+/gate/world/daughters/insert box
+/gate/grid/geometry/setXLength 146.3 mm
+/gate/grid/geometry/setYLength 146.3 mm
+/gate/grid/geometry/setZLength 1. mm
+/gate/grid/placement/setTranslation 0. 0. -253.1 mm
+/gate/grid/setMaterial Copper
+/gate/grid/vis/setColor red
+/gate/grid/vis/forceSolid
+#
+# Insert the first hole of air in the Grid
+##
+/gate/grid/daughters/name hole
+/gate/grid/daughters/insert box
+/gate/hole/geometry/setXLength 20. mm
+/gate/hole/geometry/setYLength 20. mm
+/gate/hole/geometry/setZLength 1. mm
+#/gate/hole/placement/setRotationAxis 0 1 0
+#/gate/hole/placement/setRotationAngle 90 deg
+/gate/hole/setMaterial Air
+#
+# Repeat the hole in an array
+##
+/gate/hole/repeaters/insert cubicArray
+/gate/hole/cubicArray/setRepeatNumberX 7
+/gate/hole/cubicArray/setRepeatNumberY 7
+/gate/hole/cubicArray/setRepeatNumberZ 1
+/gate/hole/cubicArray/setRepeatVector  20. 20. 0. mm
+#
+# Repeat these holes in a linear
+##
+#/gate/hole/repeaters/insert linear
+#/gate/hole/linear/setRepeatNumber 2
+#/gate/hole/linear/setRepeatVector 0. 0.18 0.312 cm
+

@@ -1,0 +1,15 @@
+################################
+# ACQUISITION for 1 projection #
+################################
+/gate/application/setTimeSlice     5. s
+/gate/application/setTimeStart     0.  s
+/gate/application/setTimeStop      10. s
+
+####################################
+# ACQUISITION with 720 projections #
+####################################
+#/gate/application/setTimeSlice     0.025 s
+#/gate/application/setTimeStart     0.  s
+#/gate/application/setTimeStop      18. s
+
+/gate/application/startDAQ
